@@ -52,7 +52,7 @@ public class ElectionController {
 		isThreading = true;
 		while(true) {
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(1000);
 				simulateVotes();
 				messagingTemplate.convertAndSend("/client/election", voteSummaryMap);
 			} catch (InterruptedException e) {
@@ -104,24 +104,24 @@ public class ElectionController {
 	public void initCandidate() {
 		Candidate candidate = new Candidate();
 		candidate.setParty(parties.get(1));
-		candidate.setFirstName("Rodrigo");
-		candidate.setLastName("Duterte");
+		candidate.setFirstName("candidate");
+		candidate.setLastName("1");
 		candidate.setCandidateId(1);
 		candidate.setParty(getParty(1));
 		candidates.put(candidate.getCandidateId(), candidate);
 		
 		candidate = new Candidate();
 		candidate.setParty(parties.get(2));
-		candidate.setFirstName("Mar");
-		candidate.setLastName("Roxas");
+		candidate.setFirstName("candidate");
+		candidate.setLastName("2");
 		candidate.setCandidateId(2);
 		candidate.setParty(getParty(2));
 		candidates.put(candidate.getCandidateId(), candidate);
 		
 		candidate = new Candidate();
 		candidate.setParty(parties.get(3));
-		candidate.setFirstName("Jejomar");
-		candidate.setLastName("Binay");
+		candidate.setFirstName("candidate");
+		candidate.setLastName("3");
 		candidate.setCandidateId(3);
 		candidate.setParty(getParty(3));
 		candidates.put(candidate.getCandidateId(), candidate);
